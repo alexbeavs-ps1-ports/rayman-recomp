@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Rayman",
+    "id": "SLES-00049",
+    "boot_exe": "SLES_000.49"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Rayman (Europe) (En,Fr,De).cue",
+    "bin_name": "Rayman (Europe) (En,Fr,De) (Track 1).bin",
+    "track_counts": [
+      51
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 182715120,
+      "md5": "3345f302a620094d5ec9fe4f408299d4",
+      "sha1": "3cb7fe9e20edd58c7c09f5a944436a824199e34c",
+      "crc32": "edd3677e"
+    },
+    "disc_fp": "d7fc8cb62493a8b943b19d73fcf55d9781bbfa20083ab67909846908d98556cd"
+  },
+  "exe": {
+    "load_address": "0x80123000",
+    "entry_pc": "0x801AA610",
+    "text_size": "0x000AC000",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 1352,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

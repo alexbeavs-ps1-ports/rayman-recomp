@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Rayman"
+id = "SLES-00049"
+players = 1
+exe = "disc/SLES_000.49"
+disc = "disc/Rayman (Europe) (En,Fr,De).cue"
+discs = ["disc/Rayman (Europe) (En,Fr,De).cue"]
+disc_serials = ["SLES-00049"]
+load_address = "0x80123000"
+entry_pc = "0x801AA610"
+text_size = "0x000AC000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Rayman (Europe) (En,Fr,De) (Track 1).bin"
+cue_name = "Rayman (Europe) (En,Fr,De).cue"
+boot_exe = "SLES_000.49"
+known_sizes = [182715120]
+known_md5 = [
+  "3345f302a620094d5ec9fe4f408299d4",
+]
+known_sha1 = [
+  "3cb7fe9e20edd58c7c09f5a944436a824199e34c",
+]
+known_crc32 = [
+  "edd3677e",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Rayman Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 51
+required_disc_fp = "d7fc8cb62493a8b943b19d73fcf55d9781bbfa20083ab67909846908d98556cd"

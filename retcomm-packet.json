@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "rayman-psx",
+  "name": "Rayman",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "rayman-recomp",
+  "rom_identity": {
+    "crc32": [
+      "edd3677e"
+    ],
+    "md5": [
+      "3345f302a620094d5ec9fe4f408299d4"
+    ],
+    "sha1": [
+      "3cb7fe9e20edd58c7c09f5a944436a824199e34c"
+    ],
+    "disc_serials": [
+      "SLES-00049"
+    ],
+    "sizes": [
+      182715120
+    ],
+    "filenames": [
+      "Rayman (Europe) (En,Fr,De).cue",
+      "Rayman (Europe) (En,Fr,De) (Track 1).bin"
+    ],
+    "track_counts": [
+      51
+    ],
+    "disc_fps": [
+      "d7fc8cb62493a8b943b19d73fcf55d9781bbfa20083ab67909846908d98556cd"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH5552.BIN",
+    "profile": "SCPH5552",
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/rayman-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "rayman-*-windows-x64.zip",
+      "linux-x64": "rayman-*-linux-x64.zip",
+      "macos-arm64": "rayman-*-macos-arm64.zip",
+      "macos-x64": "rayman-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "rayman.exe",
+    "linux": "rayman",
+    "macos": "rayman"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/rayman-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
